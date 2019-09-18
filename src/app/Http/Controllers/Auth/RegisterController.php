@@ -10,29 +10,17 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
 
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
-     *
+     * 会員登録後のリダイレクト先
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
-     * Create a new controller instance.
-     *
+     * ログイン済みかのチェック(ログインしていても登録画面は表示させるため、exceptしない)
      * @return void
      */
     public function __construct()
@@ -41,8 +29,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
+     * 登録時の入力チェック項目
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
@@ -56,8 +43,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
-     *
+     * ユーザ登録
      * @param  array  $data
      * @return \App\User
      */
