@@ -17,7 +17,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->integer("user_id")->unsigned();
             $table->foreign("user_id")->references("id")->on("users");
-            $table->string("event_name");
+            $table->string("name");
             $table->string("event_key");
             $table->dateTime("release_start");
             $table->dateTime("release_end");
